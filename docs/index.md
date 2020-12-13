@@ -6,7 +6,7 @@ This website provides some stand alone tutorials for genomics, population, compa
 
 * [Short Read Assembly](Genomics/Assembly) - Using short-read Illumina data for assemby
 * [Long Read Assembly](Genomics/Long_Read_Assembly) - Using long read Nanopore,PacBio
-** [Assembly Assessment](Genomics/Genome_Assessment) - BUSCO, QUAST
+* [Assembly Assessment](Genomics/Genome_Assessment) - BUSCO, QUAST
 * [Annotation](Genomics/Genome_Annotation) - Bacteria and Eukaryotic genome annotation (with emphasis on Fungi)
 * PanGenome
 
