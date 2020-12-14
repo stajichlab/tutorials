@@ -33,16 +33,19 @@ Follow the [directions on the HPCC manual](http://hpcc.ucr.edu/manuals_linux-clu
 
 All of these can be changed paths - the only critical part on UCR HPCC is in the ~/.html folder is where website serves up data from our server. On other local servers it might be ~/public_html or /var/www/html on your own host.
 
-```
+```bash
 mkdir -p ~/bigdata/jbrowse2 # it is best to store data on the bigdata partition so you do not run out of space
 mkdir -p ~/.html
 cd ~/.html/
 ln -s ~/bigdata/jbrowse2 .
 cd jbrowse2 # now you will proceed to install browser sites in this folder
-
 ```
 
+To add an assembly for this genome
+```bash
+
 jbrowse add-assembly NC_045512.fna.gz --load inPlace --type bgzipFasta
+```
 
 If you do not want to make everything in this folder public you can use some simple strategies to enable a password protected space by [creating a `.htaccess`](http://hpcc.ucr.edu/manuals_linux-cluster_sharing.html#password-protect-web-pages) file. Generally if you want to protect the data, setup a `.htaccess` and a corresponing `.htpasswd` to require logging in.
 
@@ -68,7 +71,7 @@ On the web a user browsing will not have permission to see `https://cluster.hpcc
 ## Setting up your own copy of JBrowse software
 
 The next directions are specific to the UCR HPCC. These instructions use an already build conda environment which you can link to.
-```
+```bash
 cd ~/.html/jbrowse
 
 module load jbrowse/2 # UCR specific - otherwise if you installed jbrowse via npm ``
@@ -80,7 +83,7 @@ These instructions are UCR specific - otherwise if you installed jbrowse via `np
 If you are going to support multiple JBrowse environments you only need to have a custom data folder. So you can symlink to all the files within the jbrowse checkout and then make a separate data folder too. Otherwise you need to make sure you have a separate custom jbrowse checkout for each project you are supporting.
 
 Download the SARS-CoV-2 genome and annotation from NCBI - this can be either in the folder you want to put the data or you can later symlink or copy from this folder
-```
+```bash
 module load samtools
 module load bcftools
 cd SARS-CoV-2
@@ -102,7 +105,7 @@ bgzip -i NC_045512.sorted.gff
 tabix NC_045512.sorted.gff.gz
 ```
 To load genome you have already put in the `SARS-CoV-2` folder - you need to *GO INTO THE* `SARS-CoV-2` folder
-```
+```bash
 cd SARS-CoV-2
 # if downloaded the data into the folder
 jbrowse add-assembly NC_045512.fna.gz  --load inPlace --type bgzipFasta
@@ -122,7 +125,7 @@ jbrowse add-track  NC_045512.sorted.gff.gz --load inPlace
 ```
 
 To load VCF files (SNPs and variants)
-```
+```bash
 jbrowse add-track SARS-CoV-2.vcf.gz --load inPlace
 # if there are warnings you need to build an index you can srun
 # module load bcftools
@@ -134,7 +137,7 @@ jbrowse add-track SARS-CoV-2.vcf.gz --load inPlace
 
 To load BAM files, WIG files, or other gFF you can use same add-track.
 For BAM, CRAM, files they need to have been indexed
-```
+```bash
 module load samtools
 samtools index SRR11140748.bam
 jbrowse add-track SRR11140748.bam --load inPlace
