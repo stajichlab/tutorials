@@ -21,7 +21,7 @@ To visualize genome annotation combined with Epigenomic, Transcriptomic, or Vari
 
 The [FAQ](https://jbrowse.org/docs/faq.html) is also incredibly helpful.
 
-# Setup JBrowse UCR's [HPCC](http://hpcc.ucr.edu)
+# Setup JBrowse on UCR [HPCC](http://hpcc.ucr.edu)
 
 These steps will show you how to setup JBrowse on HPCC with some already installed systems to make it easier for you
 
@@ -101,7 +101,6 @@ bgzip -i NC_045512.sorted.gff
 # re-index with other index scheme
 tabix NC_045512.sorted.gff.gz
 ```
-
 To load genome you have already put in the `SARS-CoV-2` folder - you need to *GO INTO THE* `SARS-CoV-2` folder
 ```
 cd SARS-CoV-2
@@ -140,15 +139,14 @@ module load samtools
 samtools index SRR11140748.bam
 jbrowse add-track SRR11140748.bam --load inPlace
 # or if the file was made IN this directory
-jbrowse add-track SRR11140748.bam --load inPlace
 # if it gives you a warning about index file run
 # samtools index BAMFILE
+
 ```
+Other file types that can be loaded include bigwig files.
 
 Note that on the UCR HPCC to serve up BAM files properly you need to create a `.htaccess` file in the jbrowse folder (remember ours is called `SARS-CoV-2` in this example).
-Contents should be
 
+Now navigate to the web with you link based on your username and folder.
 
-Now navigate to the web with you link based on your username and folder - this would look like this but you need to put your username  `http://cluster.hpcc.ucr.edu/~USERNAME/private/jbrowse2/SARS-CoV-2`
-
-To see my example go to [http://cluster.hpcc.ucr.edu/~jstajich/private/jbrowse2/SARS-CoV-2/](http://cluster.hpcc.ucr.edu/~jstajich/private/jbrowse2/SARS-CoV-2/)
+You can see a working version of JBrowse2 hosted on this example [github hosted site for SARS-CoV-2](https://stajichlab.github.io/tutorial_JB2/SARS-CoV-2/)
