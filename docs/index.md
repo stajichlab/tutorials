@@ -34,7 +34,7 @@ This website provides some stand alone tutorials for genomics, population, compa
 
 # Visualization
 
-* JBrowse2 Genome Browser Basics
+* JBrowse2 Genome Browser [Basics](Viz/JBrowse_Basics)
 * Tree Visualization
 
 # R-tools
@@ -48,3 +48,7 @@ This website provides some stand alone tutorials for genomics, population, compa
 * Metabarcode analyses with amptk
 * Metabarcode analyses with QIIME1
 * Metabarcode analyses with QIIME2
+
+# Taxonomy
+
+* [Query NCBI Taxonomy Database](Taxonomy/Query_NCBI_Taxonomy) - Query NCBI Taxonomy database
