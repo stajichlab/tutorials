@@ -149,4 +149,6 @@ Note that on the UCR HPCC to serve up BAM files properly you need to create a `.
 
 Now navigate to the web with you link based on your username and folder.
 
-You can see a working version of JBrowse2 hosted on this example [github hosted site for SARS-CoV-2](https://stajichlab.github.io/tutorial_JB2/SARS-CoV-2/)
+You can see a working version of JBrowse2 hosted on this example [github hosted site for SARS-CoV-2](https://stajichlab.github.io/tutorial_JB2/SARS-CoV-2/).
+
+Note you cannot really host large genomes or files here as github limits to files ~50Mb and smaller. So this is is merely an example.
