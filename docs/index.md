@@ -8,6 +8,8 @@ This website provides some stand alone tutorials for genomics, population, compa
 * [Long Read Assembly](Genomics/Long_Read_Assembly) - Using long read Nanopore,PacBio
 * [Assembly Assessment](Genomics/Genome_Assessment) - BUSCO, QUAST
 * [Annotation](Genomics/Genome_Annotation) - Bacteria and Eukaryotic genome annotation (with emphasis on Fungi)
+* [Repeats and Transposons](Genomics/TE_Repeats) - Identify Transposons and Repetitive elements
+
 * [Pan-Genome Construction](Genomes/Pangenome) - Assembly of pan-genome with emphasis on Eukaryotic example
 * [Shotgun Metagenome](Genomics/Metagenome_Assembly)
 * [Transcriptome Assembly](Genomics/Transcriptome_Assembly)
@@ -19,6 +21,7 @@ This website provides some stand alone tutorials for genomics, population, compa
 * Whole Genome Alignment
 * Codon-based Gene analyses
 
+\
 # Transcriptome
 
 * RNA-Seq from Aligmments
