@@ -8,11 +8,13 @@ This website provides some stand alone tutorials for genomics, population, compa
 * [Long Read Assembly](Genomics/Long_Read_Assembly) - Using long read Nanopore,PacBio
 * [Assembly Assessment](Genomics/Genome_Assessment) - BUSCO, QUAST
 * [Annotation](Genomics/Genome_Annotation) - Bacteria and Eukaryotic genome annotation (with emphasis on Fungi)
+
 * [Repeats and Transposons](Genomics/TE_Repeats) - Identify Transposons and Repetitive elements
 
 * [Pan-Genome Construction](Genomes/Pangenome) - Assembly of pan-genome with emphasis on Eukaryotic example
-* [Shotgun Metagenome](Genomics/Metagenome_Assembly)
-* [Transcriptome Assembly](Genomics/Transcriptome_Assembly)
+
+* [Shotgun Metagenome](Genomics/Metagenome_Assembly) - Assembly shotgun metagenomes
+
 
 # Comparative analyses
 
@@ -21,11 +23,12 @@ This website provides some stand alone tutorials for genomics, population, compa
 * Whole Genome Alignment
 * Codon-based Gene analyses
 
-\
 # Transcriptome
 
-* RNA-Seq from Aligmments
-* RNA-Seq from pseudoalignment (Kallisto, Salmon)
+* [Transcriptome Assembly](Transcriptome/RNASeq_Assembly)
+* [RNA-Seq alignments to Genome](Transcriptome/RNASeq_SpliceAlign)
+* [RNA-Seq from pseudoalignment](Transcriptome/RNASeq_pseudoalign) - With Kallisto, Salmon
+* [Quantifying and comparing RNA-Seq in R](Transcriptome/Quantifying_RNASeq)
 
 # Population Genomics
 
@@ -38,13 +41,13 @@ This website provides some stand alone tutorials for genomics, population, compa
 # Visualization
 
 * JBrowse2 Genome Browser [Basics](Viz/JBrowse_Basics)
-* Tree Visualization
+* Phylogenetic Tree Visualization
 
 # R-tools
 
 * Tidyverse - data import, filter, manipulation
-* Heatmaps
-* Data distributions with Boxplots, Histograms
+* Drawing Heatmaps in R
+* Drawing data distributions with Boxplots, Histograms
 
 # Myco/Microbiome
 

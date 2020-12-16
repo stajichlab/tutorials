@@ -12,7 +12,7 @@ The downloaded and installed RepBase on the UCR HPCC is from 2017 (RepBaseRepeat
 The [Dfam consortium](https://www.dfam.org/home) has constructed a database and approach for masking repeats using DNA HMMs to model repeat families. This includes both bulk Repeats found through *de novo* clustering and a curated set of families. The work is more heavily skewed towards model species include vertebrates (human, mouse, zebrafish), worm  and fly. There are partial libraries for seven additional species. This resource has less utility for Fungi but could provide a reasonable repository for curation of fungal families in the future.
 
 To run RepeatMasker the following script could be used:
-The scripts shown here are in [TE_repeats github](https://github.com/stajichlab/tutorials/examples/Genomics/TE_repeats).
+The scripts shown here are in [TE_repeats github](https://github.com/stajichlab/tutorials/tree/main/examples/Genomics/TE_repeats).
 
 ```bash
 #SBATCH -N 1 -n 16 --out RepeatMasker.%A.log -J RepMsk
@@ -37,7 +37,24 @@ I usually prefer to run a separate script to process the RepeatMasker output and
 
 # Developing a *de novo* Repeat library with RepeatModeler
 
+```bash
+#SBATCH -N 1 -n 16 --out RepeatMasker.%A.log -J RepMsk
+
+CPU=$SLURM_CPUS_ON_NODE # set the CPUS dynamicall for the job
+if [ -z $CPU ]; then # unless this is not really a slurm job
+ CPU=2 # set the number of CPUs to 2
+fi
+module load RepeatModeler/2.0.1
+SPECIES=AfumigatusAf293
+if [ ! -f $SPECIES.translation ]; then # assumes using rmblast as default
+  BuildDatabase -name $SPECIES $SPECIES.genome.fasta
+fi
+# this can take 2-48 hrs depending on genome size - you may need to set job running
+RepeatModeler -database $SPECIES -LTRStruct -pa $CPU
+```
+
 ## Classifying *de novo* repeats
+
 
 # Masking Repeats with REPET pipeline
 
